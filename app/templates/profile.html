@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div id="card">
+    <div id="card_head">
+        <img src="{{url_for('static', filename='images/avatar2.jpg')}}"/>
+        <h2>Michel Davies</h2>
+        <p>@md_2000</p>
+        <p>Portmore,Jamaica</p>
+        <p>Joined {{ date_joined }}</p>
+    </div>
+    <div id="info">
+        <p id="para">I am a 2nd year student of the University of the West Indies studying Computer Science. I have a passion for backend development and Networking.
+            Contact me if you would like to collaborate. </p>
+        <div id="social_container">
+            <ul class="details">
+              <li>
+                <p>7</p>
+              </li>
+              <li>Posts</li>
+            </ul>
+            <ul class="details">
+              <li>
+                <p>100</p>
+              </li>
+              <li>Following</li>
+            </ul>
+            <ul class="details">
+              <li>
+                <p>420</p>
+              </li>
+              <li>Followers</li>
+            </ul>
+          </div>
+        <button id="btn">Follow</button>
+    </div>
+</div>
+{% endblock %}

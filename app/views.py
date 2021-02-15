@@ -4,9 +4,13 @@ Jinja2 Documentation:    http://jinja.pocoo.org/2/documentation/
 Werkzeug Documentation:  http://werkzeug.pocoo.org/documentation/
 This file creates your application.
 """
-
+import datetime
 from app import app
 from flask import render_template, request, redirect, url_for, flash
+
+def format_date_joined(year,month,day):
+    date=datetime.datetime(year,month,day)
+    return date.strftime("%B, %Y")
 
 
 ###
@@ -22,8 +26,12 @@ def home():
 @app.route('/about/')
 def about():
     """Render the website's about page."""
-    return render_template('about.html', name="Mary Jane")
+    return render_template('about.html', name="Michel Davies")
 
+@app.route("/profile")
+def profile():
+    date_joined=format_date_joined(2021,2,14)
+    return render_template('profile.html',date_joined=date_joined)
 
 ###
 # The functions below should be applicable to all Flask apps.
